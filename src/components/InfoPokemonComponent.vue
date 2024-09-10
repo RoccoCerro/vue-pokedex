@@ -1,9 +1,13 @@
 <template>
    <section class="info-pokemon">
     <div class="container">
-      <div class="img-pokemon">
-        {{ pokemon.name }}
-        <img :src="pokemon.sprites.front_default" alt="">
+      <div v-if="pokemon">
+        <div v-if="pokemon.sprites" class="img-pokemon">
+          <img :src="pokemon.sprites.front_default" alt="">
+        </div>
+      </div>
+      <div>
+        {{ error }}
       </div>
     </div>
   </section>
@@ -12,7 +16,8 @@
 <script>
   export default {
     props:{
-      pokemon: Object
+      pokemon: Object,
+      error: String
     }
   }
 </script>
