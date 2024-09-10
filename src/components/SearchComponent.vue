@@ -56,7 +56,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .my-col{
-    min-width: 100px;
-  }
+  // .my-col{
+  //   min-width: 100px;
+  // }
 </style>
