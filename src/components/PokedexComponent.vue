@@ -4,7 +4,6 @@
       <div class="row">
         <div class="col-6 border border-primary">
           <SearchComponent />
-          <InfoPokemonComponent />
         </div>
         <div class="col-6 border border-primary">
 
@@ -16,12 +15,10 @@
 
 <script>
 import SearchComponent from './SearchComponent.vue'
-import InfoPokemonComponent from './InfoPokemonComponent.vue'
 
   export default {
     components:{
       SearchComponent,
-      InfoPokemonComponent
     }    
   }
 </script>
