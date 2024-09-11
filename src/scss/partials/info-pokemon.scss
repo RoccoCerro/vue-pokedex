@@ -1,0 +1,51 @@
+.info-pokemon{
+
+  .img-pokemon{
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    &>div{
+      width: 300px;
+      height: 200px;
+      border: 20px solid gray;
+
+      div{
+        border: 2px solid black;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+    }
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+
+      position: absolute;
+      top:0;
+      left: 0;
+      opacity: 0;
+      animation: slide 6s infinite;
+
+      &:nth-child(1){
+        animation-delay: 0s;
+      }
+
+      &:nth-child(2){
+        animation-delay: 3s;
+      }
+    }
+
+    @keyframes slide {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      30% { opacity: 1; }
+      40% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  }
+}

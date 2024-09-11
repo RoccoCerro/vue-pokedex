@@ -2,10 +2,10 @@
   <main class="pokedex">
     <div class="container">
       <div class="row">
-        <div class="col-6 border border-primary">
+        <div class="col-12 col-md-6 my-col-pokedex p-2">
           <SearchComponent ref="searchComponent" @newPokemon="refreshPokemon"/>
         </div>
-        <div class="col-6 border border-primary">
+        <div class="col-12 col-md-6 my-col-pokedex p-2">
           <MyPokemonComponent ref="myPokemonComponent" :newPokemon="newPokemon" @showPokemon="showPokemon"/>
         </div>
       </div>
@@ -42,5 +42,5 @@ import MyPokemonComponent from './MyPokemonComponent.vue';
 </script>
 
 <style lang="scss" scoped>
-
+@use '../scss/partials/pokedex.scss';
 </style>
