@@ -6,7 +6,7 @@
           <SearchComponent @newPokemon="refreshPokemon"/>
         </div>
         <div class="col-6 border border-primary">
-          <MyPokemonComponent :newPokemon="newPokemon"/>
+          <MyPokemonComponent ref="myPokemonComponent" :newPokemon="newPokemon"/>
         </div>
       </div>
     </div>
@@ -20,7 +20,7 @@ import MyPokemonComponent from './MyPokemonComponent.vue';
   export default {
     data(){
       return{
-        newPokemon: ''
+        newPokemon: null
       }
     },
     components:{
@@ -31,8 +31,10 @@ import MyPokemonComponent from './MyPokemonComponent.vue';
       refreshPokemon(pokemon){
         
         this.newPokemon = pokemon
+        this.$refs.myPokemonComponent.updatePokemon(pokemon);
+
       }
-    }    
+    }
   }
 </script>
 

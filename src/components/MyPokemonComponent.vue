@@ -1,8 +1,10 @@
 <template>
   <section>
-    <ul>
-      <li v-for="pokemon in myPokemon"> {{ pokemon }}</li>
-    </ul>
+    <div>
+      <ul>
+        <li v-for="(pokemon, i) in myPokemon" @click="deletePokemon(i)"> {{ pokemon }}</li>
+      </ul>
+    </div>
   </section>
 </template>
 
@@ -11,7 +13,6 @@
     data(){
       return{
         myPokemon: [],
-        chiave: null 
       }
     },
     props:{
@@ -23,10 +24,19 @@
 
         for(let i = 0; i < localStorage.length; i++){
           
-          this.chiave = localStorage.key(i);
-          this.myPokemon.push(JSON.parse(localStorage.getItem(this.chiave)))
+          const chiave = localStorage.key(i);
+          this.myPokemon.push(JSON.parse(localStorage.getItem(chiave)))
         }
+      },
+      deletePokemon(i){
+        localStorage.removeItem(localStorage.key(i));
 
+        this.getPokemon()
+      },
+      updatePokemon(pokemon) {
+        console.log('update' , pokemon)
+        
+        this.getPokemon()
       }
     },
     mounted(){
@@ -35,6 +45,7 @@
     watch:{
       newPokemon(newValue, oldValue){
         this.getPokemon()
+
       }
     }
   }

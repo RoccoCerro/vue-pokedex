@@ -54,16 +54,17 @@
           }
         });
       },
-      capturePokemon(e){
+      capturePokemon(){
 
         if(this.pokemon.id === undefined){
           alert('Search for a pokemon!')
         }else{
           localStorage.setItem(this.pokemon.id, JSON.stringify(this.pokemon.name))
-          this.$emit('newPokemon', this.pokemon.name)
-        }
+          this.$emit('newPokemon', this.pokemon)
 
-      }
+        }
+      },
+      emits: ['newPokemon']
     }
   }
 </script>
