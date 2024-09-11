@@ -3,10 +3,10 @@
     <div class="container">
       <div class="row">
         <div class="col-6 border border-primary">
-          <SearchComponent @newPokemon="refreshPokemon"/>
+          <SearchComponent ref="searchComponent" @newPokemon="refreshPokemon"/>
         </div>
         <div class="col-6 border border-primary">
-          <MyPokemonComponent ref="myPokemonComponent" :newPokemon="newPokemon"/>
+          <MyPokemonComponent ref="myPokemonComponent" :newPokemon="newPokemon" @showPokemon="showPokemon"/>
         </div>
       </div>
     </div>
@@ -33,6 +33,9 @@ import MyPokemonComponent from './MyPokemonComponent.vue';
         this.newPokemon = pokemon
         this.$refs.myPokemonComponent.updatePokemon(pokemon);
 
+      },
+      showPokemon(pokemon){
+        this.$refs.searchComponent.forceFetchPokemon(pokemon);
       }
     }
   }

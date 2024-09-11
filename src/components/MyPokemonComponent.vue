@@ -2,7 +2,12 @@
   <section>
     <div>
       <ul>
-        <li v-for="(pokemon, i) in myPokemon" @click="deletePokemon(i)"> {{ pokemon }}</li>
+        <li v-for="(pokemon, i) in myPokemon" class="row"> 
+          <div class="col-10 name" @click="showPokemon(pokemon)">
+            {{ pokemon }}
+          </div>
+          <div class="col-2" @click="deletePokemon(i)">X</div>
+        </li>
       </ul>
     </div>
   </section>
@@ -37,6 +42,9 @@
         console.log('update' , pokemon)
         
         this.getPokemon()
+      },
+      showPokemon(pokemon){
+        this.$emit('showPokemon', pokemon)
       }
     },
     mounted(){

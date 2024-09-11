@@ -64,7 +64,12 @@
 
         }
       },
-      emits: ['newPokemon']
+      emits: ['newPokemon'],
+      forceFetchPokemon(name){
+        this.name = name
+
+        this.fetchPokemon()
+      }
     }
   }
 </script>
