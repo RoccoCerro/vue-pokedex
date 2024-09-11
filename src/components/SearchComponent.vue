@@ -7,7 +7,7 @@
             <input v-model="name" class="form-control my-input" type="text" placeholder="Pokemon">
           </div>
           <div class="col-3 my-col">
-            <button @click="fetchPokemon" class="btn btn-dark my-btn">Search</button>
+            <button @click="fetchPokemon" class="btn btn-dark my-btn"><font-awesome-icon :icon="['fas', 'magnifying-glass']" /></button>
           </div>
           <div class="col-3">
             <button @click="capturePokemon" class="btn btn-outline-dark my-btn">Capture</button>
