@@ -3,11 +3,14 @@
     <div class="container">
       <!-- <form action=""> -->
         <div class="row">
-          <div class="col-8 my-col">
+          <div class="col-6 my-col">
             <input v-model="name" class="form-control my-input" type="text" placeholder="Pokemon">
           </div>
-          <div class="col-4 my-col">
+          <div class="col-3 my-col">
             <button @click="fetchPokemon" class="btn btn-dark my-btn">Search</button>
+          </div>
+          <div class="col-3">
+            <button @click="capturePokemon" class="btn btn-outline-dark my-btn">Capture</button>
           </div>
         </div>
       <!-- </form> -->
@@ -43,13 +46,23 @@
         })
         .catch(error => {
           if (error.response && error.response.status === 404) {
-            console.error('Il nome inserito non è un pokemon!');
+            console.error('The name you entered is not a Pokemon!');
              // Messaggio personalizzato per 404
-            this.error = 'Il nome inserito non è un pokemon!'
+            this.error = 'The name you entered is not a Pokemon!'
           } else {
-            console.error('Errore nella richiesta API:', error);
+            console.error('Error in API request:', error);
           }
         });
+      },
+      capturePokemon(e){
+
+        if(this.pokemon.id === undefined){
+          alert('Search for a pokemon!')
+        }else{
+          localStorage.setItem(this.pokemon.id, JSON.stringify(this.pokemon.name))
+          this.$emit('newPokemon', this.pokemon.name)
+        }
+
       }
     }
   }

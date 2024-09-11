@@ -5,7 +5,7 @@
         <div v-if="pokemon.sprites" class="img-pokemon">
           <img :src="pokemon.sprites.front_default" alt="">
         </div>
-        <div class="abilities">
+        <div v-if="pokemon.abilities" class="abilities">
           <h6>Abilities: </h6>
           <ul>
             <li v-for="ability in pokemon.abilities">
