@@ -13,6 +13,19 @@
             </li>
           </ul>
         </div>
+        <div class="stats">
+          <h6>Stats:</h6>
+          <ul>
+            <li v-for="stats in pokemon.stats" class="row">
+              <div class="stat col">
+                {{ stats.stat.name }}
+              </div>
+              <div class="progress-stat col">
+                <progress id="file" max="100" :value="stats.base_stat"></progress>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
       <div>
         {{ error }}
