@@ -1,20 +1,23 @@
 <template>
    <section class="info-pokemon">
     <div class="container">
-      <div v-if="pokemon">
-        <div v-if="pokemon.sprites" class="img-pokemon">
+      <div>
+        <div class="img-pokemon">
           <div>
-            <div class="slideshow"> 
+            <div v-if="pokemon.sprites" class="slideshow"> 
               <img :src="pokemon.sprites.front_default" alt="">
               <img :src="pokemon.sprites.back_shiny" alt="">
             </div>
+            <div v-else class="w-100 h-100">
+              <img class="img-pokeball w-100 h-100 object-fit-contain" src="/pokeball.webp" alt="">
+            </div>
           </div>
         </div>
-        <div class="info" v-if="pokemon.name">
-          <ul class="list-unstyled">
-            <li><strong>Name:</strong> {{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }}</li>
-            <li><strong>Height:</strong> {{ pokemon.height }}</li>
-            <li><strong>Weight:</strong> {{ pokemon.weight }}</li>
+        <div class="info">
+          <ul class="list-unstyled" v-if="pokemon.name">
+            <li><strong>Name:</strong> {{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }} </li>
+            <li><strong>Height:</strong> {{ pokemon.height }} </li>
+            <li><strong>Weight:</strong> {{ pokemon.weight }} </li>
           </ul>
           <!-- <div v-if="pokemon.abilities" class="abilities">
             <h6>Abilities: </h6>

@@ -1,7 +1,7 @@
 <template>
   <main class="pokedex">
     <div class="container">
-      <div class="row">
+      <div class="row vh-100">
         <div class="col-12 col-md-6 my-col-pokedex p-2">
           <SearchComponent ref="searchComponent" @newPokemon="refreshPokemon"/>
         </div>
