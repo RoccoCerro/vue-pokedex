@@ -1,12 +1,12 @@
 <template>
-  <section>
-    <div>
+  <section class="p-3">
+    <div class="bg-light p-3">
       <ul>
         <li v-for="(pokemon, i) in myPokemon" class="row"> 
           <div class="col-10 name" @click="showPokemon(pokemon)">
-            {{ pokemon }}
+            {{ pokemon.charAt(0).toUpperCase() + pokemon.slice(1) }}
           </div>
-          <div class="col-2" @click="deletePokemon(i)">X</div>
+          <div class="col-2 btn" @click="deletePokemon(i)"><font-awesome-icon :icon="['fas', 'trash']" /></div>
         </li>
       </ul>
     </div>
@@ -60,5 +60,5 @@
 </script>
 
 <style lang="scss" scoped>
-
+@use '../scss/partials/my-pokemon.scss';
 </style>

@@ -40,10 +40,10 @@
               </li>
             </ul>
           </div>
+          <div>
+            {{ error }}
+          </div>
         </div>
-      </div>
-      <div>
-        {{ error }}
       </div>
     </div>
   </section>
