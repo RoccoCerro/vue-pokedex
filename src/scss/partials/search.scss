@@ -1,0 +1,25 @@
+.script-sm {
+  display: block;
+}
+.script-md {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .script-sm {
+      display: none;
+  }
+  .script-md {
+      display: block;
+  }
+}
+
+
+.my-btn{
+  height: 40px;
+
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}

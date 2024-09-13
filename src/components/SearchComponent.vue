@@ -9,7 +9,10 @@
           <div class="col-3 my-col">
             <button @click="fetchPokemon" class="btn btn-dark my-btn"><font-awesome-icon :icon="['fas', 'magnifying-glass']" /></button>
           </div>
-          <div class="col-3">
+          <div class="col-3 script-sm">
+            <button @click="capturePokemon" class="btn btn-outline-dark my-btn"><img src="/public/image.png" class="" alt=""></button>
+          </div>
+          <div class="col-3 script-md">
             <button @click="capturePokemon" class="btn btn-outline-dark my-btn">Capture</button>
           </div>
         </div>
@@ -75,7 +78,5 @@
 </script>
 
 <style lang="scss" scoped>
-  // .my-col{
-  //   min-width: 100px;
-  // }
+@use '../scss/partials/search.scss';
 </style>

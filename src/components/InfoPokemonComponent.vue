@@ -19,14 +19,6 @@
             <li><strong>Height:</strong> {{ pokemon.height }} </li>
             <li><strong>Weight:</strong> {{ pokemon.weight }} </li>
           </ul>
-          <!-- <div v-if="pokemon.abilities" class="abilities">
-            <h6>Abilities: </h6>
-            <ul>
-              <li v-for="ability in pokemon.abilities">
-                {{ ability.ability.name.charAt(0).toUpperCase() + ability.ability.name.slice(1) }}
-              </li>
-            </ul>
-          </div> -->
           <div class="stats" v-if="pokemon.stats">
             <h6>Stats:</h6>
             <ul>
