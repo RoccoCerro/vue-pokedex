@@ -13,7 +13,7 @@
             </div>
           </div>
         </div>
-        <div class="info">
+        <div class="info" :class="pokemon.name ?? 'height-content'">
           <ul class="list-unstyled" v-if="pokemon.name">
             <li><strong>Name:</strong> {{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }} </li>
             <li><strong>Height:</strong> {{ pokemon.height }} </li>
