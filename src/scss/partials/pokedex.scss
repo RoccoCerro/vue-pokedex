@@ -4,11 +4,26 @@
 
   &:first-child{
     border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
   }
 
   &:last-child{
-    border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+}
+
+@media ( min-width: 767px ){
+  .my-col-pokedex{
+  
+    &:first-child{
+      border-bottom-left-radius: 20px;
+      border-top-right-radius: 0px;
+    }
+  
+    &:last-child{
+      border-top-right-radius: 20px;
+      border-bottom-left-radius: 0px;
+    }
   }
 }
